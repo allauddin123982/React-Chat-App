@@ -1,16 +1,16 @@
 import React from "react";
-import profile from "../images/profilepic.png";
-const Contacts = () => {
+const Contacts = ({foundUser}) => {
   return (
     <>
       <div className=" overflow-auto overflow-x-hidden mt-2 ">
-        <div className="body p-2 flex items-center gap-x-2 hover:bg-gray-100 rounded-md cursor-pointer ">
-          <img src={profile} alt="" className="w-12 h-12 rounded-full" />
+        {foundUser &&
+          <div className="body p-2 flex items-center gap-x-2 hover:bg-gray-100 rounded-md cursor-pointer ">
+          <img src={foundUser.photoURL} alt="" className="w-12 h-12 rounded-full object-cover" />
           <div>
-            <p className="font-bold"> Moiz</p>
+            <p className="font-bold">{foundUser.displayName}</p>
             <span>hello</span>
           </div>
-        </div>
+        </div>}
       </div>
     </>
   );
